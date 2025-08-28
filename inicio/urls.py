@@ -1,5 +1,6 @@
 from django.urls import path
+from inicio.views import inicio
 
 urlpatterns = [
-    path('vista/', inicio, name='inicio')
+    path('', inicio, name='inicio')
 ]
