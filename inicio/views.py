@@ -15,8 +15,9 @@ def crear_aerosol(request):
         if formulario.is_valid():
             marca_nueva = formulario.cleaned_data.get('marca')
             color_nuevo = formulario.cleaned_data.get('color')
-            
-            aerosol = Aerosol(marca=marca_nueva, color=color_nuevo)
+            origen_nuevo = formulario.cleaned_data.get('origen')
+           
+            aerosol = Aerosol(marca=marca_nueva, color=color_nuevo, origen=origen_nuevo)
             aerosol.save()
             
             return redirect("lista_aerosoles")
