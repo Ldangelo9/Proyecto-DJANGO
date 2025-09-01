@@ -12,9 +12,20 @@
         <a href= {% url "crear_aerosol" %}>Crear Aerosol</a>
         <a href= {% url "lista_aerosoles" %}>Lista de aerosoles</a>
     </nav>   
-
+    
 
     <h1>Lista de aerosoles</h1>
+   
+    <ul>
+       {% for aerosol in lista_aerosoles %}
+        
+        
+        <li>
+            {{aerosol}}
+        </li>
+        
+        {% endfor %}
+    </ul>
 
     
 </body>

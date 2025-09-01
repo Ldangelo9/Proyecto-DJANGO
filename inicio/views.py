@@ -19,13 +19,10 @@ def crear_aerosol(request):
             aerosol = Aerosol(marca=marca_nueva, color=color_nuevo)
             aerosol.save()
             
-            return redirect("inicio")
+            return redirect("lista_aerosoles")
     else: 
         formulario = FormularioCrearAerosol()
     
-    
-    # aerosol = Aerosol(marca=marca, color=color)
-    # aerosol.save()
     
     return render(request, 'inicio/crear_aerosol.html', {'formulario': formulario})   
 
@@ -33,5 +30,5 @@ def lista_aerosoles(request):
     
     aerosol = Aerosol.objects.all()
     
-    return render(request,'inicio/lista_aerosoles.html',{'lista_de_aerosoles': aerosol})
+    return render(request,'inicio/lista_aerosoles.html',{'lista_aerosoles': aerosol})
     
